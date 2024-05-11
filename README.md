@@ -1,0 +1,3 @@
+- [Screen Saver](https://anjali1102.github.io/vanillaJS/screenSaver/screenSaver.html)
+- [Dark Modal](https://anjali1102.github.io/vanillaJS/darkMode/darkMode.html)
+- [Dark Mode Modal](https://anjali1102.github.io/vanillaJS/darkModeModal/darkModeModal.html)
