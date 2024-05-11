@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+
+    <title>Dark Mode Modal | Vanilla JS Projects</title>
+
+    <link rel="stylesheet" crossorigin href="../assets/pico.css" />
+    <link rel="stylesheet" crossorigin href="../assets/darklight.css" />
+  </head>
+
+  <body class="container">
+    <header>
+      <h1>Dark mode Modal</h1>
+    </header>
+    <button id="open" style="width: 20%">Settings</button>
+    <main>
+      <article>
+        <main id="darklight"></main>
+      </article>
+    </main>
+
+    <dialog id="darkModeDialog">
+      <div style="align-self: center">
+        <label>
+          <input
+            type="checkbox"
+            id="toggle"
+            name="toggle"
+            role="switch"
+            checked
+            onchange="toggleTheme()"
+          />
+          Use dark mode
+        </label>
+        <button id="close">close</button>
+      </div>
+    </dialog>
+
+    <script id="theme.js">
+      const dialog = document.getElementById("darkModeDialog");
+      const settingsBtn = document.getElementById("open");
+
+      settingsBtn.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      const closeBtn = document.getElementById("close");
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      const toggleTheme = () => {
+        const backgroundTheme =
+          document.documentElement.getAttribute("data-theme");
+        const toggledTheme = backgroundTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", toggledTheme);
+      };
+    </script>
+  </body>
+</html>
